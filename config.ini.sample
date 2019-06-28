@@ -1,0 +1,18 @@
+[main]
+sort = 12-33-56
+acctname = My Company
+rate = 500
+days = 5
+subtotal = 1
+email = my@email_address.com
+bank = Bank Name
+services = Services Provided
+date = {:%d-%b-%Y}.format(date.today())
+acctno = 123456789
+vatrate = 20
+address = 10 Some Street, Somewhere, AB1 CD2
+client = My Client
+phone = +441234567890
+terms = 30
+vatno = 123456789
+companyno = 1234567
