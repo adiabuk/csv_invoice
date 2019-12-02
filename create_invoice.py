@@ -42,7 +42,6 @@ def prompt_for_config():
         results[name] = result
     return results
 
-
 def main():
     """Main function"""
 
@@ -52,8 +51,6 @@ def main():
     config = AttrDict(config_dict)
     template = "template.docx"
     document = MailMerge(template)
-    print(document.get_merge_fields())
-    print(config.sort)
     config.subtotal = float(float(config.rate) * float(config.days))
     config.vatamount = float((float(config.vatrate) * float(config.subtotal))/100)
     config.total = float(float(config.subtotal) + float(config.vatamount))
@@ -85,5 +82,6 @@ def main():
         )
 
     document.write('{}.docx'.format(config.invoiceno))
+    print("Done!")
 if __name__ == '__main__':
     main()
