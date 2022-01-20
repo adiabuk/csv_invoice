@@ -21,8 +21,6 @@ class AttrDict(dict):
         super(AttrDict, self).__init__(*args, **kwargs)
         self.__dict__ = self
 
-
-
 def get_config():
     """Get static config from config file"""
 
@@ -41,8 +39,7 @@ def main():
     data = open(filename, 'r')
     reader = csv.reader(data.readlines()[1:], delimiter=',')
 
-    template = "template2.docx"
-    #print(document.get_merge_fields())
+    template = "template.docx"
     for row in reader:
         config.invoice_date, config.invoicename, config.total, config.flatno, \
                 config.invoiceno, config.invoiceaddress, config.invoicecity, \
@@ -58,7 +55,6 @@ def main():
                               outputfile='{}.pdf'.format(config.invoiceno))
         print("Creating {}".format(config.invoiceno))
         #os.remove('{}.docx'.format(config.invoiceno))
-
 
 if __name__ == '__main__':
     main()
