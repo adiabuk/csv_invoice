@@ -2,3 +2,4 @@ config.ini
 *.docx
 *.pdf
 .*
+invoices.csv
