@@ -1,5 +1,6 @@
 config.ini
 *.docx
 *.pdf
+*.log
 .*
 invoices.csv
