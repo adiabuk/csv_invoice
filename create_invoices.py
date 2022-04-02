@@ -41,8 +41,8 @@ def main():
 
     template = "template.docx"
     for row in reader:
-        config.invoice_date, config.invoicename, config.total, config.flatno, \
-                config.invoiceno, config.invoiceaddress, config.invoicecity, \
+        config.invoice_date, config.invoicename, config.invoiceno, config.total, config.flatno, \
+                config.invoiceaddress, config.invoicecity, \
                 config.invoicepostcode = row
         config.monthyear = datetime.datetime.strptime(config.invoice_date, '%d/%m/%Y') \
                 .strftime("%b %Y")
