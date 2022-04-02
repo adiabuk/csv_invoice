@@ -12,7 +12,7 @@ from configparser import ConfigParser
 import pypandoc
 from mailmerge import MailMerge
 
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, 'en_GB.utf8')
 
 class AttrDict(dict):
     """Class to allow dictinary keys to be specified as attributes"""
@@ -41,9 +41,8 @@ def main():
 
     template = "template.docx"
     for row in reader:
-        config.invoice_date, config.invoicename, config.invoiceno, config.total, config.flatno, \
-                config.invoiceaddress, config.invoicecity, \
-                config.invoicepostcode = row
+        config.invoice_date, config.invoicename, config.invoiceno, config.total, config.address1, \
+                config.address2, config.invoicecity, config.invoicepostcode = row
         config.monthyear = datetime.datetime.strptime(config.invoice_date, '%d/%m/%Y') \
                 .strftime("%b %Y")
         config.total = locale.currency(float(config.total), grouping=True)
