@@ -43,7 +43,7 @@ def main():
     for row in reader:
         config.invoice_date, config.invoicename, config.invoiceno, config.total, config.address1, \
                 config.address2, config.invoicecity, config.invoicepostcode = row
-        config.monthyear = datetime.datetime.strptime(config.invoice_date, '%d/%m/%Y') \
+        config.monthyear = datetime.datetime.strptime(config.invoice_date, '%d/%m/%y') \
                 .strftime("%b %Y")
         config.total = locale.currency(float(config.total), grouping=True)
 
