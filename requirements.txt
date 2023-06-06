@@ -1,3 +1,4 @@
 docx_mailmerge==0.5.0
-mailmerge==2.2.1
+mailmerge==2.2.0
 pypandoc==1.7.2
+configparser==4.0.2
